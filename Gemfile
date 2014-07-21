@@ -10,6 +10,8 @@ gem 'turbolinks'
 gem 'bootstrap-sass'
 gem 'paperclip', github: 'thoughtbot/paperclip' 
 gem 'jbuilder', '~> 1.2'
+gem "paperclip-dropbox", ">= 1.1.7"
+gem "figaro"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
