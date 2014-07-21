@@ -1,0 +1,37 @@
+<h3>Product Listings </h3>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Company</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @listings.each do |listing| %>
+      <tr>
+        <td><%= image_tag listing.image.url(:small) %></td>
+        <td><%= listing.name %></td>
+        <td><%= listing.description %></td>
+        <td><%= listing.price %></td>
+        <td><%= listing.quantity %></td>
+        <td><%= listing.company %></td>
+        <td><%= link_to 'Show', listing, class: "btn btn-link" %></td>
+        <td><%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %></td>
+        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product Listing', new_listing_path, class: "btn btn-primary" %>
