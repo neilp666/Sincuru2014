@@ -1,21 +1,16 @@
 <h3>Product Listings </h3>
 
 <table class="table table-striped table-bordered">
-  <thead>
     <tr>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Quantity</th>
-      <th>Sold by</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th class="center">Image</th>
+      <th class="center">Name</th>
+      <th class="center">Description</th>
+      <th class="center">Price</th>
+      <th class="center">Quantity</th>
+      <th class="center">Sold by</th>
+      <th class="center">Actions</th>
     </tr>
-  </thead>
 
-  <tbody>
     <% @listings.each do |listing| %>
       <tr>
         <td><%= link_to image_tag(listing.image.url(:small)), listing %></td>
@@ -25,13 +20,20 @@
         <td><%= listing.quantity %></td>
         <td><%= listing.user.name %></td>
 
-        <% if (user_signed_in?) && (current_user == listing.user) %>
-        <td><%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
-        <% end %>
+       <td>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Action <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+
+        <%= link_to "View", listing, class: "btn btn-link" %>
+        <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %>
+        <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
+      </td>
       </tr>
     <% end %>
-  </tbody>
+
 </table>
 
 <br>
