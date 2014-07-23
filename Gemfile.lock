@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/rweng/jquery-datatables-rails.git
+  revision: ee838ffc755e7c205a416870efb4f27400eb2c53
+  specs:
+    jquery-datatables-rails (2.1.10.0.3)
+      jquery-rails
+      sass-rails
+
+GIT
   remote: git://github.com/thoughtbot/paperclip.git
   revision: dca87ec5d8038b2d436a75ad6119c8eb67b73e70
   specs:
@@ -72,6 +80,8 @@ GEM
     jquery-rails (3.1.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (5.0.0)
+      railties (>= 3.2.16)
     json (1.8.1)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -152,7 +162,9 @@ DEPENDENCIES
   devise
   figaro
   jbuilder (~> 1.2)
+  jquery-datatables-rails!
   jquery-rails
+  jquery-ui-rails
   paperclip!
   paperclip-dropbox (>= 1.1.7)
   pg

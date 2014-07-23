@@ -13,6 +13,8 @@ gem 'jbuilder', '~> 1.2'
 gem "paperclip-dropbox", ">= 1.1.7"
 gem "figaro"
 gem "devise"
+gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+gem 'jquery-ui-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
