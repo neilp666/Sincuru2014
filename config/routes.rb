@@ -2,7 +2,9 @@ Sincuru2014::Application.routes.draw do
   resources :orders
 
   devise_for :users
-  resources :listings
+  resources :listings do
+    resources :orders
+  end
 
   get "pages/about"
   get "pages/contact"

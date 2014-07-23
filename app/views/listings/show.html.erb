@@ -13,7 +13,13 @@
   <p><%= @listing.quantity %></p>
   <p><%= @listing.company %></p>
 
-  <% if current_user == @listing.user %>
+  <br>
+  <div class"center">
+    <%= link_to "Buy It Now", new_listing_order_path(@listing), class: "btn btn-primary" %>
+  </div>
+</div>
+
+  
     <%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-link" %> |
   <% end %>
 <%= link_to 'Back', listings_path, class: "btn btn-link" %>
